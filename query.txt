@@ -1,0 +1,101 @@
+(1) SELECT name FROM staffs
+
+(2) SELECT DISTINCT department_id FROM staffs
+
+(3) SELECT staffs.name as staffname, idno, fathername, salary,joindate, departments.name as depname FROM staffs INNER JOIN departments ON staffs.deparment_id = departments.id
+	ORDER BY staffs.name
+
+(4) SELECT staffs.name as staffname, departments.name as depname FROM staffs INNER JOIN departments ON staffs.deparment_id = departments.id
+	ORDER BY staff.name AND staff.deparment_id DESC
+
+(5) SELECT * FROM staffs
+	WHERE name IN ('Kay Thwe','Thae Su Wai')
+
+(6) SELECT * FROM staffs INNER JOIN departments ON staffs.deparment_id = departments.id AND departments.name = "Admin"                        
+
+(7) SELECT * FROM staffs
+	WHERE name LIKE"%a%"
+
+(8) SELECT * FROM staffs
+	WHERE name LIKE"%e"
+
+(9) SELECT * FROM staffs
+	WHERE salary BETWEEN '100000' AND '500000'
+
+(10)SELECT * FROM staffs
+	WHERE joindate = '2014-02-20'
+
+(11)SELECT COUNT(*) FROM staffs INNER JOIN departments ON staffs.deparment_id = departments.id 
+	WHERE departments.name = "Admin"
+
+(12)SELECT * FROM staffs INNER JOIN departments ON staffs.deparment_id = departments.id 
+	WHERE departments.name = "Manager"
+
+
+(13) SELECT name FROM staffs LIMIT 5
+
+(14)SELECT salary AS "three max-salaries" 
+FROM `staffs` 
+ORDER BY salary DESC LIMIT 5
+
+(15)SELECT departments.id, departments.name,sum(staffs.salary)
+FROM departments INNER JOIN staffs on departments.id= staffs.deparment_id
+GROUP BY departments.id,departments.name
+
+(16) SELECT staffs.id as id,staffs.name,bonus.id,bonus.bonusdate
+	 FROM staffs.name,bonus.bonusdate
+	 WHERE bonusdate =`2016-02-20`
+
+(17) SELECT staffs.id as id,staffs.name,staffs.fathername,staffs.salary,staffs.joindate
+FROM staffs INNER JOIN bonus ON staffs.id = bonus.staff_id
+WHERE staffs.name LIKE "%Aye Aye%"
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
